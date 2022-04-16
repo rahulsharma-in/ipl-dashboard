@@ -39,7 +39,7 @@ public class BatchConfig {
 
     @Bean
     public FlatFileItemReader<MatchInput> reader() {
-        return new FlatFileItemReaderBuilder<MatchInput>()
+        FlatFileItemReader<MatchInput> flatFileItemReader = new FlatFileItemReaderBuilder<MatchInput>()
                 .name("matchInputReader")
                 .resource(new ClassPathResource("match-data.csv"))
                 .delimited()
@@ -48,6 +48,9 @@ public class BatchConfig {
                     setTargetType(MatchInput.class);
                 }})
                 .build();
+        //Skipping csv header while reading
+        flatFileItemReader.setLinesToSkip(1);
+        return flatFileItemReader;
     }
 
     @Bean
