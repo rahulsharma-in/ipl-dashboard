@@ -26,4 +26,13 @@ public class Team {
         this.teamName = teamName;
         this.totalMatches = totalMatches;
     }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "teamName='" + teamName + '\'' +
+                ", totalMatches=" + totalMatches +
+                ", totalWins=" + totalWins +
+                '}';
+    }
 }
