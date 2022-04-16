@@ -60,7 +60,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
                     if (existingTeam != null) existingTeam.setTotalWins(Integer.parseInt(result[1].toString()));
                 });
 
-        teamData.values().forEach(team -> entityManager.persist(team));
+        teamData.values().forEach(entityManager::persist);
 
     }
 }
