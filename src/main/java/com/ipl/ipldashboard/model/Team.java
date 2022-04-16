@@ -4,10 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,6 +19,9 @@ public class Team {
     private String teamName;
     private int totalMatches;
     private int totalWins;
+
+    @Transient
+    private List<Match> matches;
 
     public Team(String teamName, int totalMatches) {
         this.teamName = teamName;
