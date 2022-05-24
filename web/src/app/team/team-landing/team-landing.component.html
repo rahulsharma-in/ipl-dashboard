@@ -1,0 +1,5 @@
+<div>
+    <h1>{{ team.teamName }}</h1>
+    <app-match-detail-card [match]="team.matches[0]"></app-match-detail-card>
+    <app-match-small-card *ngFor="let _match of team.matches" [match]="_match"></app-match-small-card>
+</div>
