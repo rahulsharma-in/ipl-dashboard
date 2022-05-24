@@ -4,10 +4,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatchRoutingModule } from './match-routing.module';
+import { MatchLandingComponent } from './match-landing/match-landing.component';
 
 
 @NgModule({
-  declarations: [MatchDetailCardComponent, MatchSmallCardComponent],
+  declarations: [MatchDetailCardComponent, MatchSmallCardComponent, MatchLandingComponent],
   imports: [
     CommonModule,
     MatchRoutingModule
