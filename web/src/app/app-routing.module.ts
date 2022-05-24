@@ -4,6 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'teams',
+    pathMatch: 'full'
+  },
+  {
     path: 'teams',
     loadChildren: () => import('./team/team.module').then(m => m.TeamModule)
   },
