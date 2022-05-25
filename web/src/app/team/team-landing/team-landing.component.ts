@@ -1,5 +1,5 @@
+import { MatchService } from './../../core/services/match.service';
 import { Component, OnInit } from '@angular/core';
-import { TeamService } from 'src/app/core/services/team.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,13 +11,12 @@ export class TeamLandingComponent implements OnInit {
 
   public team: any = [];
   private teamName: string;
-  constructor(public teamService: TeamService, public route: ActivatedRoute) { }
+  constructor(public matchService: MatchService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.teamName = this.route.snapshot.paramMap.get('teamName')
-    this.teamService.fetchMatches(this.teamName).subscribe((response: any) => {
+    this.matchService.fetchMatches(this.teamName).subscribe((response: any) => {
       this.team = response;
-      console.log(response);
     })
   }
 
