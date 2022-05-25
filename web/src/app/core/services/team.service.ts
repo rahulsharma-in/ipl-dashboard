@@ -8,8 +8,4 @@ export class TeamService {
 
   constructor(private http: HttpClient) { }
 
-  fetchMatches = (teamName : string) => {
-    let response = this.http.get('http://localhost:8080/team/' + teamName);
-    return response;
-  }
 }
