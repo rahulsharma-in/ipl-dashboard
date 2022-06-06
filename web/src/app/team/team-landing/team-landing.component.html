@@ -1,5 +1,5 @@
 <div>
     <h1>{{ team.teamName }}</h1>
     <app-match-detail-card [match]="team.matches[0]" [teamName]="team.teamName"></app-match-detail-card>
-    <app-match-small-card *ngFor="let _match of team.matches" [match]="_match" [teamName]="team.teamName"></app-match-small-card>
+    <app-match-small-card *ngFor="let _match of oneSlicedTeamMatches" [match]="_match" [teamName]="team.teamName"></app-match-small-card>
 </div>
