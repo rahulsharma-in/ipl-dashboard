@@ -11,7 +11,7 @@ export class TeamLandingComponent implements OnInit {
 
   public team: any = [];
   public oneSlicedTeamMatches: any = [];
-  private teamName: string;
+  public teamName: string;
   public wins: number;
   public losses: number;
   constructor(public matchService: MatchService, public route: ActivatedRoute) { }
