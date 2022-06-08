@@ -27,7 +27,7 @@ public class TeamServiceImpl implements TeamService {
         Optional<Team> optionalTeam = teamRepository.findByTeamName(teamName);
         if (optionalTeam.isPresent()) {
             Team team = optionalTeam.get();
-            List<Match> matches = matchService.findByTeam1OrTeam2(teamName, teamName, 0, 5);
+            List<Match> matches = matchService.findByTeam1OrTeam2(teamName, teamName, 0, 4);
             team.setMatches(matches);
             return team;
         }
