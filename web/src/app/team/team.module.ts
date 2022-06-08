@@ -1,3 +1,4 @@
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatchModule } from './../match/match.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,7 +12,8 @@ import { TeamLandingComponent } from './team-landing/team-landing.component';
   imports: [
     CommonModule,
     TeamRoutingModule,
-    MatchModule
+    MatchModule,
+    MatGridListModule
   ]
 })
 export class TeamModule { }

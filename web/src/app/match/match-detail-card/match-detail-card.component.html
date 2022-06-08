@@ -1,7 +1,19 @@
-<div>
-    <h3>Latest Matches</h3>
-    <h1>vs <a href="/teams/{{ otherTeam }}">{{ otherTeam }}</a></h1>
-    <h2>{{ match.date }}</h2>
-    <h3>at {{ match.venue }}</h3>
-    <h3>{{ match.matchWinner }} won by {{ resultMargin }} {{ winBy }}</h3>
-</div>
+<table>
+    <tr>
+        <td>
+            <span class="vs">vs</span>
+            <h1><a href="/teams/{{ otherTeam }}">{{ otherTeam }}</a></h1>
+            <h2 class="match-date">{{ match.date }}</h2>
+            <h3 class="match-venue">at {{ match.venue }}</h3>
+            <h3 class="match-result">{{ match.matchWinner }} won by {{ resultMargin }} {{ winBy }}</h3>
+        </td>
+        <td class="additional-details">
+            <h3>First Innings</h3>
+            <p>{{ match.team1 }}</p>
+            <h3>Second Innings</h3>
+            <p>{{ match.team2 }}</p>
+            <h3>Man of the match</h3>
+            <p>{{ match.playerOfMatch }}</p>
+        </td>
+    </tr>
+</table>
