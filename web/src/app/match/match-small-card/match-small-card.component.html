@@ -1,4 +1,5 @@
-<div>
-    <h3>vs <a href="/teams/{{ otherTeam }}">{{ otherTeam }}</a></h3>
+<div [ngClass]="[wonMatch ? 'won-card' : 'lost-card']">
+    <span class="vs">vs</span>
+    <h3><a href="/teams/{{ otherTeam }}">{{ otherTeam }}</a></h3>
     <p>{{ match.matchWinner }} won by {{ resultMargin }} {{ winBy }}</p>
 </div>
