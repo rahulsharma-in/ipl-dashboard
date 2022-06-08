@@ -1,1 +1,2 @@
-<p>match-landing works!</p>
+<h1>{{ teamName }}</h1>
+<app-match-detail-card *ngFor="let _match of matches" [match]="_match" [teamName]="teamName"></app-match-detail-card>

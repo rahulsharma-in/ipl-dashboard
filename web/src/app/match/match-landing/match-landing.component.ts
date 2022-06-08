@@ -9,7 +9,7 @@ import { TeamService } from 'src/app/core/services/team.service';
 })
 export class MatchLandingComponent implements OnInit {
 
-  private teamName: string;
+  public teamName: string;
   private year: string;
   public matches: any = [];
   constructor(public teamService: TeamService, public route: ActivatedRoute) { }
