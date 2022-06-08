@@ -1,2 +1,15 @@
-<h1>{{ teamName }}</h1>
+<div>
+    <h1>{{ teamName }}</h1>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label style="color: white;">Year</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="year" (ngModelChange)="modelChangeFn($event)">
+                <mat-option *ngFor="let year of years" value="{{ year }}">
+                    {{ year }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+<div>
+
 <app-match-detail-card *ngFor="let _match of matches" [match]="_match" [teamName]="teamName"></app-match-detail-card>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from 'src/app/core/services/team.service';
 
 @Component({
@@ -12,14 +12,28 @@ export class MatchLandingComponent implements OnInit {
   public teamName: string;
   private year: string;
   public matches: any = [];
-  constructor(public teamService: TeamService, public route: ActivatedRoute) { }
+  public years: number[];
+  public selectedValue: number;
+  constructor(public teamService: TeamService, public route: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
     this.teamName = this.route.snapshot.paramMap.get('teamName');
     this.year = this.route.snapshot.paramMap.get('year');
     this.teamService.fetchTeamMatches(this.teamName, this.year).subscribe((response : any) => {
       this.matches = response;
-      console.log(this.matches);
+    })
+    this.years = new Array();
+    for (let i = 2008; i <= 2016; i++) {
+      this.years.push(i);
+    }
+  }
+
+  modelChangeFn(value: any) {
+    var redirectURL = 'matches/' + this.teamName + '/' + value;
+    this.router.navigate([redirectURL]);
+    this.year = value;
+    this.teamService.fetchTeamMatches(this.teamName, this.year).subscribe((response : any) => {
+      this.matches = response;
     })
   }
 
